@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/output.css">
+</head>
+<body class="flex">
+    {{template "nav"}}
+    <main class="flex-1 p-6 bg-white rounded-lg shadow-md">
+        <main class="p-6 space-y-6">
+           <form action="/charge_search_name_handler" method="post" class="rounded-2xl py-2 flex flex-col justify-center">
+            <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+                <div
+                class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
+                </div>
+                <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+
+                <div class="max-w-md mx-auto">
+                    <div>
+                        <h1 class="text-2xl font-semibold">Search Device By Name</h1>
+                    </div>
+                    <div class="divide-y divide-gray-200">
+                    <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+                        <div class="relative">
+                            <input autocomplete="off" id="name" name="name" type="text" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Enter Name" />
+                            <label for="name" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Name</label>
+                        </div>
+                   <label for="deviceType" class="">Collected?</label>
+
+                    <select name="collected" id="collected" class="bg-slate-800 p-3 rounded-2xl text-gray-200">
+                    <option value="Yes">Collected</option>
+                    <option value="No">Uncollected</option>
+                    </select>                         
+
+                        <div class="relative">
+                        <button class="bg-cyan-500 text-white rounded-md px-2 py-1">Search Device By Name</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+            </form>   
+
+            <!-- <div class="bg-white rounded-lg shadow-md">
+            <div class="p-4 border-b font-bold text-purple-700">User List</div>
+            <table class="w-full text-left">
+                <thead class="bg-purple-50">
+                <tr>
+                    <th class="p-4">Name</th>
+                    <th class="p-4">Email</th>
+                    <th class="p-4">Role</th>
+                    <th class="p-4">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="border-t">
+                    <td class="p-4">John Doe</td>
+                    <td class="p-4">john@example.com</td>
+                    <td class="p-4">Admin</td>
+                    <td class="p-4 text-green-600 font-bold">Active</td>
+                </tr>
+                <tr class="border-t">
+                    <td class="p-4">Jane Smith</td>
+                    <td class="p-4">jane@example.com</td>
+                    <td class="p-4">Editor</td>
+                    <td class="p-4 text-yellow-500 font-bold">Pending</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md grid grid-cols-2 md:grid-cols-4 gap-4">
+            <button class="bg-purple-600 text-white py-3 rounded-lg shadow hover:bg-purple-700">Add User</button>
+            <button class="bg-blue-600 text-white py-3 rounded-lg shadow hover:bg-blue-700">Export Data</button>
+            <button class="bg-green-600 text-white py-3 rounded-lg shadow hover:bg-green-700">Generate Report</button>
+            <button class="bg-red-600 text-white py-3 rounded-lg shadow hover:bg-red-700">Delete Records</button>
+            </div> -->
+
+            <!-- <div class="bg-white p-6 rounded-lg shadow-md flex items-center gap-6">
+            <img src="https://i.pravatar.cc/100" alt="Profile" class="w-20 h-20 rounded-full shadow">
+            <div>
+                <h3 class="text-xl font-bold text-purple-700">Sophia Ray</h3>
+                <p class="text-gray-500">Administrator</p>
+                <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded-lg shadow hover:bg-purple-700">Edit Profile</button>
+            </div>
+            </div> -->
+        </main>
+    </main>
+
+</body>
+</html>

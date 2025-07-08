@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/output.css">
+</head>
+<body class="flex">
+    {{template "nav"}}
+    <main class="flex-1 p-6 bg-white rounded-lg shadow-md">
+        <form action="/card_register_handler" method="post" class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+        <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+            <div
+            class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
+            </div>
+            <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+                <div>
+                    <h1 class="text-2xl font-semibold">Card Verified</h1>
+                </div>
+            <div class="max-w-md mx-auto">
+                <div class="divide-y divide-gray-200">
+                <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+                    <div class="relative flex">
+                        <p class="text-gray-800 font-bold text-lg mr-5">Locker Number: </p>
+                        <p for="lockerNo" class="text-gray-600 ">{{.LockerNo}}</p>
+                    </div>
+                    <div class="relative flex">
+                        <p class="text-gray-800 font-bold text-lg mr-5">Serial Number: </p>
+                        <p for="lockerNo" class="text-gray-600 ">{{.SerialNo}}</p>
+                    </div>
+
+                    <div class="relative flex items-center justify-center">
+                     <a href="/card_search_serial" class="bg-teal-700 text-teal-300 rounded-md px-2 py-1">Card Verified</a>
+                    </div> 
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        </form> 
+    </main>
+</body>
+</html>

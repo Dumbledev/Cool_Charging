@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/output.css">
+</head>
+<body class="flex">
+    {{template "nav"}}
+    <main class="flex-1 p-6 bg-gray-10 rounded-lg shadow-md">
+        <p class="flex justify-center font-bold text-2xl text-gray-800">Devices</p>
+        <div class="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10">
+            <table class="w-full table-fixed">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Name</th>
+                        <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Device Type</th>
+                        <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Card</th>
+                        <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Gender</th>
+                        <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Adult</th>
+                        <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Collected</th>
+                    </tr>
+                </thead>
+                {{range .}}
+                    <tbody class="bg-white">
+                        <tr>
+                            <td class="py-4 px-6 border-b border-gray-200">{{.Name}}</td>
+                            <td class="py-4 px-6 border-b border-gray-200 truncate">{{.DeviceType}}</td>
+                            <td class="py-4 px-6 border-b border-gray-200 truncate">{{.Card.LockerNo}}</td>
+                            <td class="py-4 px-6 border-b border-gray-200 truncate">{{.Gender}}</td>
+                            <td class="py-4 px-6 border-b border-gray-200 truncate">{{.Adult}}</td>
+                            <td class="py-4 px-6 border-b border-gray-200 truncate">{{.Collected}}</td>
+                        </tr>
+                    </tbody>
+                {{end}} 
+            </table>
+        </div>  
+   </main>
+</body>
+</html>

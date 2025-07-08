@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/output.css">
+</head>
+<body class="flex bg-gray-100">
+        {{template "nav"}}
+        <main class="flex-1 p-6 bg-gray-100 mt-10">
+        <form action="/charge_register_handler" method="post" class="bg-gray-100 flex justify-center  flex-col">
+        <div class="relative py-1 ">
+            <div class="relative px-4 py-2 bg-white shadow-lg rounded-2xl">
+            <div class="max-w-md mx-auto">
+                <div>
+                    {{if . }}
+                        <h1 class="text-2xl text-green-600 font-semibold">{{.}}</h1>
+                   {{else}}
+                        <h1 class="text-2xl font-semibold flex items-center justify-center">Device Register</h1>
+                 {{end}}
+                </div>
+                <div class="divide-y divide-gray-200">
+                <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+                    <div class="relative">
+                        <input required autocomplete="off" id="name" name="name" type="text" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Name" />
+                        <label for="name" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Name</label>
+                    </div>
+                
+                    <label for="deviceType" class="">Choose Device:</label>
+
+                    <select name="deviceType" id="deviceType" class="bg-slate-800 p-3 rounded-2xl text-gray-200">
+                    <option value="Android">Android</option>
+                    <option value="Iphone">Iphone</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Tecno">Tecno</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Power Bank">Power Bank</option>
+                    <option value="Radio">Radio</option>
+                    <option value="Lamp">Lamp</option>
+                    <option value="Fan">Fan</option>
+                    </select> 
+
+
+                    <div class="flex gap-6">
+                        <div class="rounded-md w-full mx-auto max-w-2xl">
+                            <h4 class="text-xl lg:text-2xl font-semibold">
+                            Gender
+                            </h4>
+
+                            <div>
+                                <label class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3  hover:bg-indigo-300 cursor-pointer ">
+                                    <input type="radio" name="gender" value="Male" checked>
+                                    <i class="pl-2">Male</i>
+                                </label>
+
+                                <label class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3  hover:bg-indigo-300 cursor-pointer ">
+                                    <input type="radio" name="gender" value="Female">
+                                    <i class="pl-2">Female</i>
+                                </label>
+
+                            </div>
+                        </div>         
+                        
+                        <div class="rounded-md w-full mx-auto max-w-2xl">
+                            <h4 class="text-xl lg:text-2xl font-semibold">
+                            Adult?
+                            </h4>
+
+                            <div>
+                                <label class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3  hover:bg-indigo-300 cursor-pointer ">
+                                    <input type="radio" name="adult" value="Adult" checked>
+                                    <i class="pl-2">Adult</i>
+                                </label>
+
+                                <label class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3  hover:bg-indigo-300 cursor-pointer ">
+                                    <input type="radio" name="adult" value="Child">
+                                    <i class="pl-2">Child</i>
+                                </label>
+
+                            </div>
+                        </div>   
+                    </div>
+
+                    
+
+                    <div class="relative">
+                        <input required autocomplete="off" id="serialNo" name="serialNo" type="serialNo" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Serial Number" />
+                        <label for="serialNo" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Serial Number</label>
+                    </div>
+
+                    <div class="relative">
+                     <button class="bg-cyan-500 text-white rounded-md px-2 py-1">Register Device</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        </form>             
+    </main>  
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/output.css">
+</head>
+<body class="flex">
+    {{template "nav"}}
+    <main class="flex-1 p-6 bg-white rounded-lg shadow-md flex flex-col items-center justify-center">
+        <h1 class="text-2xl text-purple-800 font-extrabold">Device Details</h1>
+        <div class="flex items-center justify-center">
+            <div class=" overflow-hidden shadow rounded-lg border bg-slate-900">
+                <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg leading-6  text-gray-200 font-bold">
+                        Device Details
+                    </h3>
+                </div>
+                <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+                    <dl class="sm:divide-y sm:divide-gray-200">
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-bold text-gray-200">
+                                Name
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-200 font-bold sm:mt-0 sm:col-span-2">
+                                {{.Name}}
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-bold text-gray-200">
+                                Device Type
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-200 font-bold sm:mt-0 sm:col-span-2">
+                                {{.DeviceType}}
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-bold text-gray-200">
+                                Gender
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-200 font-bold sm:mt-0 sm:col-span-2">
+                                {{.Gender}}
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-bold text-gray-200">
+                                Date
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-200 font-bold sm:mt-0 sm:col-span-2">                       
+                            {{.Day}}-{{.Month}}-{{.Year}}
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="bg-yellow-500 overflow-hidden shadow rounded-lg border ml-10">
+                <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg leading-6 text-blue-800 font-bold">
+                        Card Details
+                    </h3>
+                </div>
+                <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+                    <dl class="sm:divide-y sm:divide-gray-200">
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-lg font-bold text-blue-600">
+                                Locker Number
+                            </dt>
+                            <dd class="mt-1 text-xl text-blue-900  sm:mt-0 sm:col-span-2">
+                                {{.Card.LockerNo}}
+                            </dd>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-lg font-bold text-blue-600">
+                                Serial Number
+                            </dt>
+                            <dd class="mt-1 text-xl text-blue-900 sm:mt-0 sm:col-span-2">
+                                {{.Card.SerialNo}}
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>            
+        </div>
+
+        <form action="/charge_collect_handler" method="post" class="flex items-center justify-center mt-7">
+            <input type="text" hidden name="chargeId" value="{{.ID}}">
+            <button type="submit" class="px-10 py-2 bg-blue-600 text-blue-300 rounded-2xl hover:bg-blue-400 hover:text-blue-800">Collect Device</button>
+        </form>            
+    </main>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/output.css">
+</head>
+<body class="flex">
+    {{template "nav"}}
+    <main class="flex-1 p-6 bg-white rounded-lg shadow-md">
+        {{if . }}
+            <p>{{.}}</p>
+        {{end}}
+        <h1>Card <Search></Search></h1>
+        <form action="/card_search_locker_handler" method="post">
+            <input type="text" placeholder="Locker No" name="lockerNo">
+            <button type="submit">Search Card</button>
+        </form>        
+    </main>
+</body>
+</html>
