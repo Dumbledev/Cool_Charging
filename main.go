@@ -5,6 +5,8 @@ import (
 	"html/template"
 	"net/http"
 	"time"
+
+	"github.com/skratchdot/open-golang/open"
 )
 
 var tmpl *template.Template
@@ -13,6 +15,11 @@ var dbUrl = "http://admin:admin@localhost:5984/cool_app"
 var dbFindUrl = dbUrl + "/_find"
 
 func main() {
+	Oerr := open.Run("C:/Users/Dumbledev/Desktop/Cool_ Charging")
+	if Oerr != nil {
+		fmt.Println(Oerr)
+	}
+
 	tmpl, _ = template.ParseGlob("templates/*.html")
 
 	fileServer := http.FileServer(http.Dir("./static"))
