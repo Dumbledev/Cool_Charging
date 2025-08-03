@@ -15,7 +15,8 @@ var dbUrl = "http://admin:admin@localhost:5984/cool_app"
 var dbFindUrl = dbUrl + "/_find"
 
 func main() {
-	Oerr := open.Run("C:/Users/Dumbledev/Desktop/Cool_ Charging")
+	// Oerr := open.Run("C:/Users/Dumbledev/Desktop/Cool_ Charging")
+	Oerr := open.Run("Cool_Charging.lnk")
 	if Oerr != nil {
 		fmt.Println(Oerr)
 	}
