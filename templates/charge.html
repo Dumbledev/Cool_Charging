@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Device</title>
     <link rel="stylesheet" href="../static/output.css">
 </head>
 <body class="flex">
@@ -45,12 +45,28 @@
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt class="text-sm font-bold text-gray-200">
+                                Adult
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-200 font-bold sm:mt-0 sm:col-span-2">
+                                {{.Adult}}
+                            </dd>
+                        </div>                        
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-bold text-gray-200">
                                 Date
                             </dt>
                             <dd class="mt-1 text-sm text-gray-200 font-bold sm:mt-0 sm:col-span-2">                       
                             {{.Day}}-{{.Month}}-{{.Year}}
                             </dd>
                         </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-bold text-gray-200">
+                                Time
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-200 font-bold sm:mt-0 sm:col-span-2">                       
+                            {{.Time}}
+                            </dd>
+                        </div>                        
                     </dl>
                 </div>
             </div>

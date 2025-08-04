@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io"
 	"net/http"
 
 	"github.com/google/uuid"
@@ -151,8 +150,37 @@ func cardDelete(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer res.Body.Close()
-	body, _ := io.ReadAll(res.Body)
-	fmt.Println(string(body))
 
-	http.Redirect(w, r, "/cards", http.StatusSeeOther)
+	chargeResp, err := findCharge(dbFindUrl, serialNo, "No")
+	if err != nil {
+		tmpl.ExecuteTemplate(w, "500.html", "Sever Error")
+		return
+	}
+	if len(chargeResp.Body) != 0 {
+		charge := chargeResp.Body[0]
+		jsonData, err = json.Marshal(card)
+		if err != nil {
+			fmt.Println("Marshal Err", err)
+			return
+		}
+		request, err = http.NewRequest("DELETE", dbUrl+"/"+charge.ID, bytes.NewBuffer(jsonData))
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		request.Header.Set("content-type", "application/json")
+		request.Header.Set("If-Match", charge.Rev)
+		client = &http.Client{}
+		res, err = client.Do(request)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		defer res.Body.Close()
+		tmpl.ExecuteTemplate(w, "card_register.html", "Card and Device Deleted Successfully")
+		return
+	} else {
+		tmpl.ExecuteTemplate(w, "card_register.html", "Card")
+		return
+	}
 }

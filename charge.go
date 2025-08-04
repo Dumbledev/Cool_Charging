@@ -58,6 +58,7 @@ func chargeRegisterHandler(w http.ResponseWriter, r *http.Request) {
 		Day:        day,
 		Month:      month.String(),
 		Date:       time.Now().Local().String(),
+		Time:       time.Now().String(),
 		Doctype:    "charge",
 	}
 
